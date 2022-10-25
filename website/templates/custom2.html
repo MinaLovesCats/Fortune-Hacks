@@ -11,15 +11,15 @@
 {% block content %}
 <br>
 <div class="container">
-<h3>Custom Activity Categories</h3>
+  <h3>Custom Spending Categories</h3>
   <p></p>
 <div class="row rows-cols-auto">  
   <div class="col">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Add Activity Category</h5>
+        <h5 class="card-title">Add Spending Category</h5>
       <form method="post" id="newCust">
-          <p>Your fancy new category here!</p>
+          <p>Add a new custom category!</p>
           <input id="custom" name="custom" placeholder="custom">
           <p></p>
           <button type="submit" class="btn btn-primary">Submit</button>
@@ -38,16 +38,16 @@
         </div>
       </div>
     </div>
-</div>
+  </div>
   <br>
-      <div class="col">
-  <div class="card">
+  <div class="col">
+    <div class="card">
         <div class="card-body">
           <ul class="list-group list-group-flush" id="notes">
-            <h5 class="card-title">All Activity Categories</h5>
-  {% for entrycat in user.entrycat %}
+            <h5 class="card-title">All Spending Categories</h5>
+  {% for customtype2 in user.customtype2 %}
   <li class="list-group-item">
-    "{{ entrycat.type }}" (added {{ entrycat.date }})
+    "{{ customtype2.type }}" (added {{ customtype2.date }})
   </li>
   {% else %}
   <li class="list-group-item">You Have No Existing Categories.</li>
@@ -56,6 +56,7 @@
         </div>
   </div>
   </div>
-  </div> 
+</div>
+</div>
 {% endblock %}
 </body>

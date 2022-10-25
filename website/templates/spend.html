@@ -9,21 +9,26 @@
 {% block message %}
 {% endblock %}
 {% block content %}
+<div class="container">
 <br>
+<br>
+  <h3>Spend Your Money</h3>
+  <p></p>
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Spend Money</h5>
             <form method="post" id="spendForm">
-          <p>I spent... (numbers and decimals only)</p>
+          <p>Amount Spent (numbers and decimals only)</p>
           <input id="hhh" name="hhh" placeholder="00.00">
           <p></p>
-          <p>I spent it on...</p>
+          <p>Category</p>
           <select class="form-select" id="category" name="category">
-    <option value="custom1" selected>{{ user.custom1 }}.</option>
-    <option value="custom2">{{ user.custom2 }}.</option>
-    <option value="custom3">{{ user.custom3 }}.</option>
+    <option value="read only" disabled readonly selected>choose...</option>
+          {% for customtype2 in user.customtype2 %}
+    <option value="{{ customtype2.id }}">{{ customtype2.type }}</option>
+          {% endfor %}
     </select>
           <p></p>
           <button type="submit" id="custom" class="btn btn-primary">Submit</button>
@@ -46,6 +51,6 @@
     </div>
   </div>
 </div>
-  
+</div>
 {% endblock %}
 </body>
